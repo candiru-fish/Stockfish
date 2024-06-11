@@ -1134,7 +1134,7 @@ moves_loop:  // When in check, search starts here
 
         // These reduction adjustments have no proven non-linear scaling.
 
-        if (beta - alpha > thisThread->rootDelta / 4)
+        if (beta - alpha > thisThread->rootDelta / 4 && depth < 12)
             r--;
 
         // Increase reduction for cut nodes (~4 Elo)
